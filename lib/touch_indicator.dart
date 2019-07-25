@@ -30,7 +30,7 @@ class TouchIndicator extends StatefulWidget {
   final bool enabled;
 
   /// Creates a touch indicator canvas
-  /// 
+  ///
   /// Touch indicators are shown on the child whenever a touch occurs
   const TouchIndicator({
     Key key,

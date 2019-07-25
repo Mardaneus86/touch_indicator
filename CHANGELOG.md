@@ -1,3 +1,7 @@
+# 1.0.2
+
+Maintenance release for pub.dev.
+
 # 1.0.1
 
 Prevents showing indicators in release mode, unless the `forceInReleaseMode` option is used. Use the `enabled` option to show or hide the indicators.
