@@ -11,7 +11,7 @@ Add the plugin to your pubspec.yaml:
 
 ```yml
 dependencies:
-  touch_indicator: ^1.0.0
+  touch_indicator: ^1.0.1
 ```
 
 ## Usage
