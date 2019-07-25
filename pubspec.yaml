@@ -1,0 +1,16 @@
+name: touch_indicator
+description: Show touch indicators, for demoing and recording your app.
+version: 1.0.0
+author: Tim Klingeleers <tim@klingeleers.be>
+homepage: https://github.com/mardaneus86/touch_indicator
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
