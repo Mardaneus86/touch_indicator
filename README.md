@@ -4,7 +4,7 @@ When you are recording a screencast of your app, you often want to give visual i
 
 You add this widget as the main widget where you want to display user touches. Usually this will be the direct child of your `MaterialApp`. It will show an indicator on every touching finger and is completely customizable.
 
-![](https://www.github.com/mardaneus86/touch_indicator/screenshots/touch_indicator_example.gif)
+![](https://raw.githubusercontent.com/mardaneus86/touch_indicator/master/screenshots/touch_indicator_example.gif)
 
 ## Installation
 Add the plugin to your pubspec.yaml:
