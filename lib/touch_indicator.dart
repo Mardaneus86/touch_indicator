@@ -1,11 +1,12 @@
 library touch_indicator;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// Adds touch indicators to the screen whenever a touch occurs
-/// 
-/// This can be useful when recording videos of an app where you want to show 
-/// where the user has tapped. Can also be useful when running integration 
+///
+/// This can be useful when recording videos of an app where you want to show
+/// where the user has tapped. Can also be useful when running integration
 /// tests or when giving demos with a screencast.
 class TouchIndicator extends StatefulWidget {
   /// The child on which to show indicators
@@ -17,12 +18,17 @@ class TouchIndicator extends StatefulWidget {
   /// The color of the indicator
   final Color indicatorColor;
 
-  /// Overrides the default indicator. 
-  /// 
+  /// Overrides the default indicator.
+  ///
   /// Make sure to set the proper [indicatorSize] to align the widget properly
   final Widget indicator;
 
-  /// Touch indicators are drawn on the child
+  /// If set to true, shows indicators in release mode as well
+  final bool forceInReleaseMode;
+
+  /// If set to false, disables the indicators from showing
+  final bool enabled;
+
   /// Creates a touch indicator canvas
   /// 
   /// Touch indicators are shown on the child whenever a touch occurs
@@ -32,6 +38,8 @@ class TouchIndicator extends StatefulWidget {
     this.indicator,
     this.indicatorSize = 40.0,
     this.indicatorColor = Colors.blueGrey,
+    this.forceInReleaseMode = false,
+    this.enabled = true,
   }) : super(key: key);
 
   @override
@@ -80,6 +88,10 @@ class _TouchIndicatorState extends State<TouchIndicator> {
 
   @override
   Widget build(BuildContext context) {
+    if ((kReleaseMode && !widget.forceInReleaseMode) || !widget.enabled) {
+      return widget.child;
+    }
+
     var children = [
       widget.child,
     ]..addAll(buildTouchIndicators());

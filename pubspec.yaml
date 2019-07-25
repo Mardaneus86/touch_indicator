@@ -1,6 +1,6 @@
 name: touch_indicator
 description: Show touch indicators, for demoing and recording your app.
-version: 1.0.0
+version: 1.0.1
 author: Tim Klingeleers <tim@klingeleers.be>
 homepage: https://github.com/mardaneus86/touch_indicator
 
