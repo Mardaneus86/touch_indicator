@@ -22,6 +22,10 @@ class TouchIndicator extends StatefulWidget {
   /// Make sure to set the proper [indicatorSize] to align the widget properly
   final Widget indicator;
 
+  /// Touch indicators are drawn on the child
+  /// Creates a touch indicator canvas
+  /// 
+  /// Touch indicators are shown on the child whenever a touch occurs
   const TouchIndicator({
     Key key,
     @required this.child,
@@ -35,10 +39,10 @@ class TouchIndicator extends StatefulWidget {
 }
 
 class _TouchIndicatorState extends State<TouchIndicator> {
-  Map<int, Offset> touchPositions = Map<int, Offset>();
+  Map<int, Offset> touchPositions = <int, Offset>{};
 
   Iterable<Widget> buildTouchIndicators() sync* {
-    if (touchPositions != null && touchPositions.length > 0) {
+    if (touchPositions != null && touchPositions.isNotEmpty) {
       for (var touchPosition in touchPositions.values) {
         yield Positioned.directional(
           start: touchPosition.dx - widget.indicatorSize / 2,
@@ -78,8 +82,7 @@ class _TouchIndicatorState extends State<TouchIndicator> {
   Widget build(BuildContext context) {
     var children = [
       widget.child,
-    ];
-    children.addAll(buildTouchIndicators());
+    ]..addAll(buildTouchIndicators());
     return Listener(
       onPointerMove: (opm) {
         savePointerPosition(opm.pointer, opm.position);
