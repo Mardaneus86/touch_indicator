@@ -43,3 +43,9 @@ Changes the size of the indicator. Default is `40.0`.
 
 ### indicator
 By adding a `Widget` here, you can change the complete look of the touch indicators. Make sure to supply a proper `indicatorSize` in order for the indicators to be positioned at the center of your touchpoints.
+
+### forceInReleaseMode
+When you want to show indicators when the app is running in release mode, make sure to enable this option. Default is `false`.
+
+### enabled
+You can enable or disable display of the indicators on the fly with this option. Default is `true`.
