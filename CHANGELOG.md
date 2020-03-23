@@ -1,3 +1,7 @@
+# 1.0.3
+
+Also using onPointerDown for pointer position
+
 # 1.0.2
 
 Maintenance release for pub.dev.

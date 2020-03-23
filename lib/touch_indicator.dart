@@ -96,6 +96,9 @@ class _TouchIndicatorState extends State<TouchIndicator> {
       widget.child,
     ]..addAll(buildTouchIndicators());
     return Listener(
+      onPointerDown: (opm) {
+        savePointerPosition(opm.pointer, opm.position);
+      },
       onPointerMove: (opm) {
         savePointerPosition(opm.pointer, opm.position);
       },
