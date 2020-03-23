@@ -1,7 +1,6 @@
 name: touch_indicator
 description: Show up to 5 touch indicators where you touch the screen. Useful when giving a demo for an audience or when recording your app.
 version: 1.0.3
-author: Tim Klingeleers <tim@klingeleers.be>
 homepage: https://github.com/mardaneus86/touch_indicator
 
 environment:

@@ -1,6 +1,6 @@
 # 1.0.3
 
-Also using onPointerDown for pointer position
+Also show indicator when touching without moving.
 
 # 1.0.2
 
