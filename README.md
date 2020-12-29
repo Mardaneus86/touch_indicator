@@ -21,15 +21,14 @@ Import the package in your Dart code:
 import 'package:touch_indicator/touch_indicator.dart';
 ```
 
-Wrap your app in the `TouchIndicator` widget:
+Wrap all routes in your app in the `TouchIndicator` widget:
 
 ```dart
 class MyApp extends StatelessWidget {
   MaterialApp(
     title: 'Touch indicator example',
-    home: TouchIndicator(
-      child: MyHomePage(title: 'Flutter Demo Home Page'),
-    ),
+    builder: (context, child) => TouchIndicator(child: child),
+    home: MyHomePage(title: 'Flutter Demo Home Page'),
   );
 }
 ```
