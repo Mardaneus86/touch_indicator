@@ -11,7 +11,7 @@ Add the plugin to your pubspec.yaml:
 
 ```yml
 dependencies:
-  touch_indicator: ^1.0.2
+  touch_indicator: ^2.0.0
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ Wrap all routes in your app in the `TouchIndicator` widget:
 class MyApp extends StatelessWidget {
   MaterialApp(
     title: 'Touch indicator example',
-    builder: (context, child) => TouchIndicator(child: child),
+    builder: (context, child) => TouchIndicator(child: child!),
     home: MyHomePage(title: 'Flutter Demo Home Page'),
   );
 }
