@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      builder: (context, child) => TouchIndicator(child: child!),
       home: TouchIndicator(
         // forceInReleaseMode: true,
         // enabled: true,

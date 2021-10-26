@@ -1,3 +1,7 @@
+# 2.0.0
+
+Support for null-safety.
+
 # 1.0.3
 
 Also show indicator when touching without moving.
