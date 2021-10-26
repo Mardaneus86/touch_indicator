@@ -21,7 +21,7 @@ class TouchIndicator extends StatefulWidget {
   /// Overrides the default indicator.
   ///
   /// Make sure to set the proper [indicatorSize] to align the widget properly
-  final Widget indicator;
+  final Widget? indicator;
 
   /// If set to true, shows indicators in release mode as well
   final bool forceInReleaseMode;
@@ -33,8 +33,8 @@ class TouchIndicator extends StatefulWidget {
   ///
   /// Touch indicators are shown on the child whenever a touch occurs
   const TouchIndicator({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.indicator,
     this.indicatorSize = 40.0,
     this.indicatorColor = Colors.blueGrey,
@@ -50,13 +50,14 @@ class _TouchIndicatorState extends State<TouchIndicator> {
   Map<int, Offset> touchPositions = <int, Offset>{};
 
   Iterable<Widget> buildTouchIndicators() sync* {
-    if (touchPositions != null && touchPositions.isNotEmpty) {
+    if (touchPositions.isNotEmpty) {
       for (var touchPosition in touchPositions.values) {
         yield Positioned.directional(
           start: touchPosition.dx - widget.indicatorSize / 2,
           top: touchPosition.dy - widget.indicatorSize / 2,
+          textDirection: TextDirection.ltr,
           child: widget.indicator != null
-              ? widget.indicator
+              ? widget.indicator!
               : Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
@@ -68,7 +69,6 @@ class _TouchIndicatorState extends State<TouchIndicator> {
                     color: widget.indicatorColor.withOpacity(0.9),
                   ),
                 ),
-          textDirection: TextDirection.ltr,
         );
       }
     }
@@ -94,7 +94,8 @@ class _TouchIndicatorState extends State<TouchIndicator> {
 
     var children = [
       widget.child,
-    ]..addAll(buildTouchIndicators());
+      ...buildTouchIndicators(),
+    ];
     return Listener(
       onPointerDown: (opm) {
         savePointerPosition(opm.pointer, opm.position);
