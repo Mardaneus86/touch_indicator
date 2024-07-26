@@ -75,12 +75,14 @@ class _TouchIndicatorState extends State<TouchIndicator> {
   }
 
   void savePointerPosition(int index, Offset position) {
+    if (!mounted) return;
     setState(() {
       touchPositions[index] = position;
     });
   }
 
   void clearPointerPosition(int index) {
+    if (!mounted) return;
     setState(() {
       touchPositions.remove(index);
     });
